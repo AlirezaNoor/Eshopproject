@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="off_canvars_overlay">
+</div>
+
+    <div class="text-left">
+        @await Component.InvokeAsync("Slider");
+    </div>
+    @*iformaation*@
+    <section class="shipping_area mb-70">
+        <div class="container">
+            <div class=" row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="single_shipping">
+                        <div class="shipping_icone">
+                            <img src="assets/img/about/shipping1.png" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h2>ارسال رایگان</h2>
+                            <p>ارسال رایگان به تمام نقاط کشور</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single_shipping">
+                        <div class="shipping_icone">
+                            <img src="assets/img/about/shipping2.png" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h2>پشتیبانی 24 ساعته</h2>
+                            <p>هر ساعت از شبانه روز تماس بگیرید</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single_shipping">
+                        <div class="shipping_icone">
+                            <img src="assets/img/about/shipping3.png" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h2>100% بازگشت وجه</h2>
+                            <p>30 روز مهلت بازگشت وجه</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="single_shipping">
+                        <div class="shipping_icone">
+                            <img src="assets/img/about/shipping4.png" alt="">
+                        </div>
+                        <div class="shipping_content">
+                            <h2>پرداخت ایمن</h2>
+                            <p>امنیت پرداخت تضمین شده</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    @*End of iformaation*@
+    
+    @*bannder*@
+    <div class="banner_area mb-40">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <div class="single_banner mb-30">
+                        <div class="banner_thumb">
+                            <a href="shop.html"><img src="assets/img/bg/banner1.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single_banner mb-30">
+                        <div class="banner_thumb">
+                            <a href="shop.html"><img src="assets/img/bg/banner2.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3">
+                    <div class="single_banner mb-30">
+                        <div class="banner_thumb">
+                            <a href="shop.html"><img src="assets/img/bg/banner3.jpg" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @*end of bannder*@
+
+
+@await Component.InvokeAsync("Sugest");
+
+
+
+@*bannder*@
+<div class="banner_area mb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="single_banner mb-30">
+                    <div class="banner_thumb">
+                        <a href="shop.html"><img src="assets/img/bg/banner4.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="single_banner mb-30">
+                    <div class="banner_thumb">
+                        <a href="shop.html"><img src="assets/img/bg/banner5.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*end of bannder*@
+
+
+@await  Component.InvokeAsync("AllCategory");
+
+
+@await  Component.InvokeAsync("ComputerAndLapTop");
+
+<div class="banner_area mb-40">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-9">
+                <div class="single_banner mb-30">
+                    <div class="banner_thumb">
+                        <a href="shop.html"><img src="assets/img/bg/banner6.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class="single_banner mb-30">
+                    <div class="banner_thumb">
+                        <a href="shop.html"><img src="assets/img/bg/banner7.jpg" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@await Component.InvokeAsync("MobileAndTablet");
+
+
