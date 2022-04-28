@@ -1,0 +1,93 @@
+﻿@model Sabzishop.Models.Pagination.Pagination<Sabzishop.Models.Products.Products>
+<div class="shop_area shop_reverse mt-60 mb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-12">
+                <aside class="sidebar_widget">
+
+                </aside>
+
+            </div>
+            <div class="col-lg-12 col-md-12">
+
+                <div class="row shop_wrapper">
+                    @foreach (var item in Model)
+                    {
+
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <article class="single_product">
+                                <figure>
+                                    <div class="product_thumb">
+                                        <a class="primary_img" href="product-details.html">
+                                            <img src="~/assets/img/product/product@(item.id).jpg" alt="">
+                                        </a>
+
+                                        <div class="label_product">
+                                            <span class="label_sale">فروش</span>
+                                        </div>
+                                        <div class="action_links">
+                                            <ul>
+                                                <li class="wishlist">
+                                                    <a href="wishlist.html" title="" data-original-title="افزودن به علاقه‌مندی‌ها">
+                                                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                                                    </a>
+                                                </li>
+                                                <li class="compare">
+                                                    <a href="#" title="" data-original-title="مقایسه">
+                                                        <span class="ion-levels"></span>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                        <div class="add_to_cart">
+                                            <a href="cart.html" title="" data-original-title="افزودن به سبد">افزودن به سبد</a>
+                                        </div>
+                                    </div>
+                                    <div class="product_content grid_content">
+                                        <div class="price_box">
+                                            @if (item.descountid != 0)
+                                            {
+                                                <span class="old_price">@item.price تومان</span>
+                                                <span class="current_price">@item.descount.pricedes تومان</span>
+                                            }
+                                        </div>
+
+                                        <h3 class="product_name grid_name">
+                                            <a href="product-details.html">@item.name</a>
+                                        </h3>
+                                    </div>
+
+                                </figure>
+                            </article>
+                        </div>
+
+                    }
+                    @{
+                        var PerDisabled = !Model.previouspage ? "disabled" : "";
+                        var nextDisabled=!Model.nextpage ? "disabled" : "";
+                    }
+              
+                    <!--shop toolbar end-->
+                    <!--shop wrapper end-->
+                </div>
+                <div class="row">
+                    @for (int i = 1; i <= Model.totalpages; i++)
+                    {
+                        @if (i > Model.pageItem)
+                        {
+                            <a asp-action="Listgroup" asp-route-pageNummber="@(Model.pageItem + 1)" class="btn btn-danger @nextDisabled">@i</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Listgroup" asp-route-pageNummber="@(Model.pageItem - 1)" class="btn btn-danger @PerDisabled">@i</a>
+                        }
+                    }
+                    <input type="hidden" id="hfCurrentPageIndex" name="pageItem" />
+                    @* <a asp-action="Listgroup" asp-route-pageNummber="@(Model.pageItem - 1)" class="btn btn-danger @PerDisabled">قبل</a>
+                <a asp-action="Listgroup" asp-route-pageNummber="@(Model.pageItem + 1)" class="btn btn-danger @nextDisabled">بعد</a>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
