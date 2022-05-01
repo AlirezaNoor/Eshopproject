@@ -30,11 +30,20 @@
                 <div class="top_right text-right">
                     <ul>
                         <li>
-                            <a href="my-account.html"> حساب کاربری </a>
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                                <a asp-action=""> حساب کاربری </a>
+                            }
+                            else
+                            {
+                                <a asp-action="Regesture">عضویت </a>
+                                <li>
+                                    <a asp-action="login">ورود</a>
+                                </li>
+                            }
                         </li>
-                        <li>
-                            <a href="checkout.html"> پرداخت </a>
-                        </li>
+ 
+
                     </ul>
                 </div>
             </div>
@@ -807,7 +816,10 @@
 <script src="~/assets/js/plugins.js"></script>
 
 	<!-- Main JS -->
-	<script src="~/assets/js/main.js"></script>
+<script src="~/assets/js/main.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

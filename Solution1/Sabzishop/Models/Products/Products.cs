@@ -1,4 +1,6 @@
-﻿using Sabzishop.Models.Discount;
+﻿using System.Collections.Generic;
+using Sabzishop.Models.BASKET;
+using Sabzishop.Models.Discount;
 
 namespace Sabzishop.Models.Products
 {
@@ -14,6 +16,6 @@ namespace Sabzishop.Models.Products
         public long descountid { get; set; }
         public Category.Category Category { get; set; }
         public Descount descount { get; set; }
-
+        public List<Basket> basket { get; set; }
     }
 }

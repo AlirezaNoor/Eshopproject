@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sabzishop.Db_Context;
 
 namespace Sabzishop.Migrations
 {
     [DbContext(typeof(MyDb))]
-    partial class MyDbModelSnapshot : ModelSnapshot
+    [Migration("20220430053023_thisistest")]
+    partial class thisistest
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -215,40 +217,6 @@ namespace Sabzishop.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Sabzishop.Models.BASKET.Basket", b =>
-                {
-                    b.Property<long>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<long?>("Productsid")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<decimal>("price")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<long>("proid")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("tedad")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("userid")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("id");
-
-                    b.HasIndex("Productsid");
-
-                    b.HasIndex("userid");
-
-                    b.ToTable("basket");
-                });
-
             modelBuilder.Entity("Sabzishop.Models.Category.Category", b =>
                 {
                     b.Property<long>("id")
@@ -323,7 +291,7 @@ namespace Sabzishop.Migrations
                         {
                             id = 1L,
                             enddes = new DateTime(2022, 5, 2, 5, 10, 20, 0, DateTimeKind.Unspecified),
-                            now = new DateTime(2022, 5, 1, 10, 25, 54, 968, DateTimeKind.Local).AddTicks(599),
+                            now = new DateTime(2022, 4, 30, 10, 0, 21, 85, DateTimeKind.Local).AddTicks(2332),
                             pricedes = 590000m,
                             proid = 4L
                         },
@@ -331,7 +299,7 @@ namespace Sabzishop.Migrations
                         {
                             id = 2L,
                             enddes = new DateTime(2022, 5, 1, 5, 10, 20, 0, DateTimeKind.Unspecified),
-                            now = new DateTime(2022, 5, 1, 10, 25, 54, 973, DateTimeKind.Local).AddTicks(1709),
+                            now = new DateTime(2022, 4, 30, 10, 0, 21, 88, DateTimeKind.Local).AddTicks(1419),
                             pricedes = 490000m,
                             proid = 7L
                         },
@@ -339,7 +307,7 @@ namespace Sabzishop.Migrations
                         {
                             id = 3L,
                             enddes = new DateTime(2022, 5, 3, 5, 10, 20, 0, DateTimeKind.Unspecified),
-                            now = new DateTime(2022, 5, 1, 10, 25, 54, 973, DateTimeKind.Local).AddTicks(1792),
+                            now = new DateTime(2022, 4, 30, 10, 0, 21, 88, DateTimeKind.Local).AddTicks(1465),
                             pricedes = 390000m,
                             proid = 8L
                         },
@@ -347,7 +315,7 @@ namespace Sabzishop.Migrations
                         {
                             id = 4L,
                             enddes = new DateTime(2022, 5, 4, 5, 10, 20, 0, DateTimeKind.Unspecified),
-                            now = new DateTime(2022, 5, 1, 10, 25, 54, 973, DateTimeKind.Local).AddTicks(1804),
+                            now = new DateTime(2022, 4, 30, 10, 0, 21, 88, DateTimeKind.Local).AddTicks(1472),
                             pricedes = 490000m,
                             proid = 10L
                         },
@@ -355,7 +323,7 @@ namespace Sabzishop.Migrations
                         {
                             id = 5L,
                             enddes = new DateTime(2022, 5, 2, 5, 10, 20, 0, DateTimeKind.Unspecified),
-                            now = new DateTime(2022, 5, 1, 10, 25, 54, 973, DateTimeKind.Local).AddTicks(1810),
+                            now = new DateTime(2022, 4, 30, 10, 0, 21, 88, DateTimeKind.Local).AddTicks(1477),
                             pricedes = 990000m,
                             proid = 11L
                         });
@@ -683,21 +651,6 @@ namespace Sabzishop.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Sabzishop.Models.BASKET.Basket", b =>
-                {
-                    b.HasOne("Sabzishop.Models.Products.Products", "Products")
-                        .WithMany("basket")
-                        .HasForeignKey("Productsid");
-
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "User")
-                        .WithMany()
-                        .HasForeignKey("userid");
-
-                    b.Navigation("Products");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("Sabzishop.Models.Discount.Descount", b =>
                 {
                     b.HasOne("Sabzishop.Models.Products.Products", "Products")
@@ -727,8 +680,6 @@ namespace Sabzishop.Migrations
 
             modelBuilder.Entity("Sabzishop.Models.Products.Products", b =>
                 {
-                    b.Navigation("basket");
-
                     b.Navigation("descount");
                 });
 #pragma warning restore 612, 618

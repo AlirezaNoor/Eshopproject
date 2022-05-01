@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Sabzishop.Models.BASKET;
 using Sabzishop.Models.Category;
 using Sabzishop.Models.Discount;
 using Sabzishop.Models.Products;
@@ -42,6 +44,19 @@ namespace Sabzishop
             builder.Property(x => x.enddes).IsRequired();
             builder.Property(x => x.pricedes).IsRequired();
             builder.HasOne(x => x.Products).WithOne(x => x.descount).HasForeignKey<Descount>(x=>x.proid);
+        }
+    }
+    public class BasketMapping : IEntityTypeConfiguration<Basket>
+    {
+        public void Configure(EntityTypeBuilder<Basket> builder)
+        {
+            builder.HasKey(x => x.id);
+            builder.Property(x => x.name).IsRequired();
+            builder.Property(x => x.price).IsRequired();
+            builder.Property(x => x.proid).IsRequired();
+            builder.Property(x => x.tedad).IsRequired();
+            builder.Property(x => x.userid).IsRequired();
+            builder.HasOne(x => x.Products).WithMany(x => x.basket).HasForeignKey(x => x.proid);
         }
     }
 }

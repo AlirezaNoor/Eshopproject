@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Sabzishop.Db_Context;
 
@@ -26,7 +27,9 @@ namespace Sabzishop
         {
             services.AddControllersWithViews();
             var conection = Configuration.GetConnectionString("EfShop");
-            services.AddDbContext<MyDb>(x=>x.UseSqlServer(conection));
+            services.AddDbContext<MyDb>(x => x.UseSqlServer(conection));
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<MyDb>()
+                .AddDefaultTokenProviders();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -44,8 +47,9 @@ namespace Sabzishop
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
+           
 
             app.UseEndpoints(endpoints =>
             {

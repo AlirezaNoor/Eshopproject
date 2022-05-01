@@ -1,5 +1,8 @@
 ﻿using System;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Sabzishop.Models.BASKET;
 using Sabzishop.Models.Category;
 using Sabzishop.Models.Discount;
 using Sabzishop.Models.Products;
@@ -7,12 +10,14 @@ using Sabzishop.Models.Slider;
 
 namespace Sabzishop.Db_Context
 {
-    public class MyDb:DbContext
+    public class MyDb:IdentityDbContext
     {
         public DbSet<Slider> slider { get; set; }
         public DbSet<Products> products { get; set; }
         public DbSet<Category> categories { get; set; }
         public DbSet<Descount> descount { get; set; }
+        public DbSet<Basket> basket { get; set; }
+
         public MyDb(DbContextOptions<MyDb> options) : base(options)
         {
         }
@@ -202,7 +207,7 @@ namespace Sabzishop.Db_Context
                     instroe = 15,
                     descountid = 2,
                 },
-            new Products()
+                new Products()
                 {
                     id = 8,
                     name = "کنسول pes4",
@@ -309,6 +314,8 @@ namespace Sabzishop.Db_Context
                 }
 
                 );
+        
+            base.OnModelCreating(modelBuilder);
 
         }
         

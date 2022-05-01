@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sabzishop.Db_Context;
 
 namespace Sabzishop.Migrations
 {
     [DbContext(typeof(MyDb))]
-    partial class MyDbModelSnapshot : ModelSnapshot
+    [Migration("20220430171519_154")]
+    partial class _154
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -246,7 +248,7 @@ namespace Sabzishop.Migrations
 
                     b.HasIndex("userid");
 
-                    b.ToTable("basket");
+                    b.ToTable("Basket");
                 });
 
             modelBuilder.Entity("Sabzishop.Models.Category.Category", b =>
@@ -323,7 +325,7 @@ namespace Sabzishop.Migrations
                         {
                             id = 1L,
                             enddes = new DateTime(2022, 5, 2, 5, 10, 20, 0, DateTimeKind.Unspecified),
-                            now = new DateTime(2022, 5, 1, 10, 25, 54, 968, DateTimeKind.Local).AddTicks(599),
+                            now = new DateTime(2022, 4, 30, 21, 45, 17, 575, DateTimeKind.Local).AddTicks(4913),
                             pricedes = 590000m,
                             proid = 4L
                         },
@@ -331,7 +333,7 @@ namespace Sabzishop.Migrations
                         {
                             id = 2L,
                             enddes = new DateTime(2022, 5, 1, 5, 10, 20, 0, DateTimeKind.Unspecified),
-                            now = new DateTime(2022, 5, 1, 10, 25, 54, 973, DateTimeKind.Local).AddTicks(1709),
+                            now = new DateTime(2022, 4, 30, 21, 45, 17, 583, DateTimeKind.Local).AddTicks(2341),
                             pricedes = 490000m,
                             proid = 7L
                         },
@@ -339,7 +341,7 @@ namespace Sabzishop.Migrations
                         {
                             id = 3L,
                             enddes = new DateTime(2022, 5, 3, 5, 10, 20, 0, DateTimeKind.Unspecified),
-                            now = new DateTime(2022, 5, 1, 10, 25, 54, 973, DateTimeKind.Local).AddTicks(1792),
+                            now = new DateTime(2022, 4, 30, 21, 45, 17, 583, DateTimeKind.Local).AddTicks(2440),
                             pricedes = 390000m,
                             proid = 8L
                         },
@@ -347,7 +349,7 @@ namespace Sabzishop.Migrations
                         {
                             id = 4L,
                             enddes = new DateTime(2022, 5, 4, 5, 10, 20, 0, DateTimeKind.Unspecified),
-                            now = new DateTime(2022, 5, 1, 10, 25, 54, 973, DateTimeKind.Local).AddTicks(1804),
+                            now = new DateTime(2022, 4, 30, 21, 45, 17, 583, DateTimeKind.Local).AddTicks(2451),
                             pricedes = 490000m,
                             proid = 10L
                         },
@@ -355,7 +357,7 @@ namespace Sabzishop.Migrations
                         {
                             id = 5L,
                             enddes = new DateTime(2022, 5, 2, 5, 10, 20, 0, DateTimeKind.Unspecified),
-                            now = new DateTime(2022, 5, 1, 10, 25, 54, 973, DateTimeKind.Local).AddTicks(1810),
+                            now = new DateTime(2022, 4, 30, 21, 45, 17, 583, DateTimeKind.Local).AddTicks(2457),
                             pricedes = 990000m,
                             proid = 11L
                         });
