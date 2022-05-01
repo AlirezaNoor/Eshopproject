@@ -135,6 +135,13 @@ namespace Sabzishop.Controllers
             return View(model);
         }
 
+        public async Task<IActionResult> Cart(string us)
+        {
+            var user = await _userManager.FindByNameAsync(us);
+            var model = _context.basket.Where(x => x.userid == user.Id).ToList();
+            return View(model);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,0 +1,20 @@
+﻿       @model List<Sabzishop.Models.BASKET.Basket>   ;              
+
+           @foreach (var item in Model)
+           {
+
+             
+                       <a href="#">
+                           <img src="~/assets/img/product/@($"product{item.id}.jpg")" alt="">
+                       </a>
+               
+              
+                       <a href="#">@item.name</a>
+                       <p>تعداد: @item.tedad × <span> @item.price تومان </span></p>
+
+             
+
+
+           }
+ 
+                    

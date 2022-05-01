@@ -158,4 +158,4 @@ D:\asp\project\Solution1\Sabzishop\bin\Debug\net5.0\Microsoft.Extensions.Identit
 D:\asp\project\Solution1\Sabzishop\bin\Debug\net5.0\Microsoft.Extensions.Identity.Stores.dll
 D:\asp\project\Solution1\Sabzishop\obj\Debug\net5.0\Razor\Views\Home\Regesture.cshtml.g.cs
 D:\asp\project\Solution1\Sabzishop\obj\Debug\net5.0\Razor\Views\Home\login.cshtml.g.cs
-D:\asp\project\Solution1\Sabzishop\obj\Debug\net5.0\Razor\Views\Home\cartshop.cshtml.g.cs
+D:\asp\project\Solution1\Sabzishop\obj\Debug\net5.0\Razor\Views\Home\Cart.cshtml.g.cs
